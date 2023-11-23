@@ -12,11 +12,13 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import com.school.main.entity.dto.StudentDto;
 import com.school.main.entity.utils.Responsible;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Schema(description = "Student class")
 @Document(collection = "user")
 public class Student extends User{
 

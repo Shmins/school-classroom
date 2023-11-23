@@ -71,7 +71,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     }
 
     @Override
-    public Iterable<Student> findAllById(Iterable<String> ids) {
+    public List<Student> findAllById(Iterable<String> ids) {
         throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
     }
 
@@ -128,6 +128,11 @@ public class StudentRepositoryImpl implements StudentRepository {
     @Override
     public <S extends Student, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
         throw new UnsupportedOperationException("Unimplemented method 'findBy'");
+    }
+
+    @Override
+    public Student findByCpf(String cpf) {
+        throw new UnsupportedOperationException("Unimplemented method 'findByCpf'");
     }
     
 }

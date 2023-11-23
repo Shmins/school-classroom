@@ -7,7 +7,7 @@ import com.school.main.entity.dto.StudentDto;
 
 public interface StudentService {
     
-    void createStudent(Student student);
+    void createStudent(StudentDto student);
 
     List<Student> getAllStudants();
 

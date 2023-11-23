@@ -71,7 +71,7 @@ public class ClassRepositoryImpl implements ClassRepository{
     }
 
     @Override
-    public Iterable<Class> findAllById(Iterable<String> ids) {
+    public List<Class> findAllById(Iterable<String> ids) {
         throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
     }
 

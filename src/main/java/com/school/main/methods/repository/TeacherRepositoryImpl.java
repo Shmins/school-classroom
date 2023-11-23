@@ -70,11 +70,7 @@ public class TeacherRepositoryImpl implements TeacherRepository{
         throw new UnsupportedOperationException("Unimplemented method 'existsById'");
     }
 
-    @Override
-    public Iterable<Teacher> findAllById(Iterable<String> ids) {
-        throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
-    }
-
+  
     @Override
     public long count() {
         throw new UnsupportedOperationException("Unimplemented method 'count'");
@@ -128,6 +124,11 @@ public class TeacherRepositoryImpl implements TeacherRepository{
     @Override
     public <S extends Teacher, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
         throw new UnsupportedOperationException("Unimplemented method 'findBy'");
+    }
+
+    @Override
+    public List<Teacher> findAllById(Iterable<String> ids) {
+        throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
     }
     
 }

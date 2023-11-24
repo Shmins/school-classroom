@@ -11,13 +11,13 @@ public interface StudentService {
 
     List<Student> getAllStudants();
 
-    Student getStudentByCpf(String cpf);
+    StudentDto getStudentByCpf(String cpf);
 
-    Student getStudentByName(String name);
+    StudentDto getStudentByName(String name);
 
-    Student getStudentById(String id);
+    StudentDto getStudentById(String id);
 
-    Student updateStudent(StudentDto student);
+    void updateStudent(StudentDto student);
 
     void deleteById(String id);
 

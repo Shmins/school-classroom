@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.school.main.entity.utils.Status;
+import com.school.main.entity.utils.Turn;
 import com.school.main.entity.dto.ClassDto;
 import com.school.main.entity.utils.SchoolSegment;
 import lombok.Getter;
@@ -31,6 +32,8 @@ public class Class {
     private Status status;
     @NonNull
     private SchoolSegment schoolSegment;
+    @NonNull
+    private Turn turn;
 
     public Class(ClassDto classDto){
         this.title = classDto.getTitle();
@@ -39,5 +42,6 @@ public class Class {
         this.studants = classDto.getStudants();
         this.status = classDto.getStatus();
         this.schoolSegment = classDto.getSchoolSegment();
+        this.turn = classDto.getTurn();
     }
 }

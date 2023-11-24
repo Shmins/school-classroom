@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Schema(description = "Student class")
-@Document(collection = "user")
+@Document(collection = "student")
 public class Student extends User{
 
     private List<Responsible> responsibles = new ArrayList<>();

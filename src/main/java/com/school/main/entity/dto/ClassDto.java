@@ -7,8 +7,10 @@ import com.school.main.entity.Student;
 import com.school.main.entity.Teacher;
 import com.school.main.entity.utils.SchoolSegment;
 import com.school.main.entity.utils.Status;
+import com.school.main.entity.utils.Turn;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,4 +26,5 @@ public class ClassDto {
     private List<Student> studants = new ArrayList<>();
     private Status status;
     private SchoolSegment schoolSegment;
+    private Turn turn;
 }

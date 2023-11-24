@@ -134,5 +134,10 @@ public class StudentRepositoryImpl implements StudentRepository {
     public Student findByCpf(String cpf) {
         throw new UnsupportedOperationException("Unimplemented method 'findByCpf'");
     }
+
+    @Override
+    public Student findByName(String name) {
+        throw new UnsupportedOperationException("Unimplemented method 'findByName'");
+    }
     
 }

@@ -2,26 +2,23 @@ package com.school.main.entity;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.school.main.entity.utils.Address;
+import com.school.main.entity.utils.Roles;
 
-import lombok.Getter;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.NonNull;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class User implements UserDetails{
+    private static final long serialVersionUID = 1905122041950251207L;
     @Id
     private String id;
     @NotNull
@@ -37,16 +34,20 @@ public class User implements UserDetails{
     private Address address;
     @NotNull
     private Date dateOfBirth;
+    @NotNull
+    private Roles role;
 
-    public User(@NonNull String cpf, @NonNull String name, @NonNull String password, @NonNull Address address, @NonNull Date dateOfBirth){
+    public User(String id, @NonNull String cpf, @NonNull String name, @NonNull String password, @NonNull Address address, @NonNull Date dateOfBirth, @NonNull Roles role){
         if(Boolean.FALSE.equals(verifyCpfCode(cpf))){
             throw new IllegalArgumentException("formato do cpf inválido");
         }
+        this.id = id;
         this.cpf = cpf;
         this.name = name;
         this.password = password;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
+        this.role = role;
     }
 
     public Boolean verifyCpfCode(String cpf) {
@@ -94,7 +95,7 @@ public class User implements UserDetails{
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_STUDANT"));
+        return Collections.emptyList();
     }
 
     @Override
@@ -104,7 +105,7 @@ public class User implements UserDetails{
 
     @Override
     public String getUsername() {
-        return this.name;
+        return this.cpf;
     }
 
     @Override
@@ -127,5 +128,57 @@ public class User implements UserDetails{
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public Roles getRole() {
+        return role;
+    }
+
+    public void setRole(Roles role) {
+        this.role = role;
     }
 }

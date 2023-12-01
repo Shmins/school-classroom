@@ -1,6 +1,6 @@
 package com.school.main.config;
 
-import org.springdoc.core.GroupedOpenApi;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

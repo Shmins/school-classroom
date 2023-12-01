@@ -1,23 +1,34 @@
 package com.school.main.services;
 
-import com.school.main.entity.Class;
+import java.util.List;
+
 import com.school.main.entity.dto.ClassDto;
+import com.school.main.entity.Class;
+import com.school.main.entity.dto.StudentDto;
+import com.school.main.entity.utils.SchoolSegment;
+import com.school.main.entity.utils.Turn;
 public interface ClassService {
     
-    Class createClass(Class data);
+    Class createClass(ClassDto data);
 
-    Class getAllClass();
+    Class addStudent(String id, StudentDto data);
+
+    List<Class> getAllClass();
 
     Class getClassById(String id);
 
     Class getClassByIdOfStudent(String id);
 
-    Class getClassByIdOfTeacher(String id);
+    List<StudentDto> getAllStudentOfClass(String id);
 
-    Class getClassBySchoolSegment(String schoolSegment);
+    ClassDto getClassByIdOfTeacher(String id);
 
-    Class updateClass(ClassDto classDto);
+    List<Class> getClassByTurn(Turn turn);
 
-    Class deleteById(String id);
+    List<Class> getClassBySchoolSegment(SchoolSegment schoolSegment);
+
+    ClassDto updateClass(ClassDto classDto);
+
+    void deleteById(String id);
 
 }

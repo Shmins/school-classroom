@@ -6,15 +6,15 @@ import com.school.main.entity.Teacher;
 import com.school.main.entity.dto.TeacherDto;
 
 public interface TeacherService {
-    void createTeacher(Teacher teacher);
+    Teacher createTeacher(TeacherDto teacher);
 
     List<Teacher> getAllTeachers();
 
-    Teacher getStudentByCpf(String cpf);
+    Teacher getTeacherByCpf(String cpf);
 
-    Teacher getStudentByName(String name);
+    Teacher getTeacherByName(String name);
 
-    Teacher getStudentById(String id);
+    Teacher getTeacherById(String id);
 
     Teacher updateTeacher(TeacherDto teacherDto);
 

@@ -2,35 +2,35 @@ package com.school.main.entity.dto;
 
 import java.util.Date;
 
-import com.school.main.entity.Teacher;
+import com.school.main.entity.Coordinator;
 import com.school.main.entity.utils.Address;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(description = "TeacherDto class")
-public class TeacherDto {
+@Schema(description = "CoordinatorDto class")
+public class CoordinatorDto {
     private String id;
     private String cpf;
     private String name;
     private String password;
-    private Address address;
+    private Address address;   
     private Date dateOfBirth;
 
-    public TeacherDto(Teacher teacher){
-        this.id = teacher.getId();
-        this.cpf = teacher.getCpf();
-        this.name = teacher.getName();
-        this.password = teacher.getPassword();
-        this.address = teacher.getAddress();
-        this.dateOfBirth = teacher.getDateOfBirth();
+    public CoordinatorDto(Coordinator coordinator){
+        this.id = coordinator.getId();
+        this.cpf = coordinator.getCpf();
+        this.name = coordinator.getName();
+        this.password = coordinator.getPassword();
+        this.address = coordinator.getAddress();
+        this.dateOfBirth = coordinator.getDateOfBirth();
     }
-    public Teacher convert(){
-        return new Teacher(id, cpf, name, password, address, dateOfBirth);
+
+    public Coordinator convert(){
+        return new Coordinator(id, cpf, name, password, address, dateOfBirth);
     }
 
     public String getId() {
@@ -77,7 +77,4 @@ public class TeacherDto {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 }

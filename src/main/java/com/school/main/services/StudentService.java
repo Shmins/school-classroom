@@ -7,17 +7,17 @@ import com.school.main.entity.dto.StudentDto;
 
 public interface StudentService {
     
-    void createStudent(StudentDto student);
+    Student createStudent(StudentDto student);
 
     List<Student> getAllStudants();
 
-    StudentDto getStudentByCpf(String cpf);
+    Student getStudentByCpf(String cpf);
 
-    StudentDto getStudentByName(String name);
+    Student getStudentByName(String name);
 
-    StudentDto getStudentById(String id);
+    Student getStudentById(String id);
 
-    void updateStudent(StudentDto student);
+    Student updateStudent(StudentDto student);
 
     void deleteById(String id);
 

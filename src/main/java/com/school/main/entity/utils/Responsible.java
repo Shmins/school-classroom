@@ -1,17 +1,40 @@
 package com.school.main.entity.utils;
 
 
-import javax.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.io.Serializable;
 
-@Getter
-@Setter
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 @AllArgsConstructor
 @NoArgsConstructor
-public class Responsible {
+public class Responsible  implements Serializable{
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @NotBlank
     private String name;
     @NotBlank

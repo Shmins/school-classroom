@@ -3,11 +3,11 @@ package com.school.main.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.school.main.entity.Teacher;
+import com.school.main.entity.Coordinator;
 
-public interface TeacherRepository extends MongoRepository<Teacher, String>{
+public interface CoordinatorRepository extends MongoRepository<Coordinator, String> {
     @Query(value = "{'cpf': ?0}")
-    Teacher findByCpf(String cpf);
+    Coordinator findByCpf(String cpf);
     @Query(value = "{'name': ?0}")
-    Teacher findByName(String name);
+    Coordinator findByName(String name);
 }

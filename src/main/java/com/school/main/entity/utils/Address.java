@@ -1,17 +1,16 @@
 package com.school.main.entity.utils;
 
 
-import javax.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.io.Serializable;
 
-@Getter
-@Setter
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 @AllArgsConstructor
 @NoArgsConstructor
-public class Address {
+public class Address implements Serializable{
+    private static final long serialVersionUID = 1905122041950251207L;
     @NotBlank
     private String road;
     @NotBlank
@@ -20,4 +19,36 @@ public class Address {
     private Integer number;
     @NotBlank
     private String complement;
+
+    public String getRoad() {
+        return road;
+    }
+
+    public void setRoad(String road) {
+        this.road = road;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public String getComplement() {
+        return complement;
+    }
+
+    public void setComplement(String complement) {
+        this.complement = complement;
+    }
 }

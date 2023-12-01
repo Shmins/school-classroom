@@ -11,6 +11,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 
 import com.school.main.entity.Class;
+import com.school.main.entity.utils.SchoolSegment;
+import com.school.main.entity.utils.Turn;
 import com.school.main.repository.ClassRepository;
 
 public class ClassRepositoryImpl implements ClassRepository{
@@ -129,5 +131,32 @@ public class ClassRepositoryImpl implements ClassRepository{
     public <S extends Class, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
         throw new UnsupportedOperationException("Unimplemented method 'findBy'");
     }
+
+    @Override
+    public List<Class> findByTurn(Turn turn) {
+        throw new UnsupportedOperationException("Unimplemented method 'findByTurn'");
+    }
+
+    @Override
+    public Class findByTitle(String title) {
+        throw new UnsupportedOperationException("Unimplemented method 'findByTitle'");
+    }
+
+    @Override
+    public List<Class> findBySchoolSegment(SchoolSegment schoolSegment) {
+        throw new UnsupportedOperationException("Unimplemented method 'findBySchoolSegment'");
+    }
+
+    @Override
+    public Class findByIdTeacher(String id) {
+        throw new UnsupportedOperationException("Unimplemented method 'findByIdTeacher'");
+    }
+
+    @Override
+    public Class findByIdStudent(String id) {
+        throw new UnsupportedOperationException("Unimplemented method 'findByIdStudent'");
+    }
+
+   
     
 }
